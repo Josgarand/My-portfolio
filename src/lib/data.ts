@@ -9,6 +9,18 @@ export const personalInfo = {
     "Soy José Luis García Andreu, técnico en Desarrollo de Aplicaciones Multiplataforma con experiencia en Angular y React, especializado en el desarrollo de aplicaciones web dinámicas y centradas en la experiencia de usuario. También he trabajado con tecnologías como Java y Spring Boot, lo que me permite desenvolverme tanto en el frontend como en el backend.",
 };
 export const workExperience = [
+
+  {
+    company: "QUENTIN INFORMATICA SL",
+    location: "Valencia, España",
+    position: "Asistente Técnico",
+    period: "Abril 2022 - Julio 2022",
+    achievements: [
+      "Resolución de incidencias técnicas en un ERP especializado en clínicas dentales y veterinarias.",
+      "Atención directa a clientes para garantizar el correcto funcionamiento del software en su operativa diaria.",
+      "Orientación a usuarios en el uso de la aplicación para optimizar procesos de gestión.",
+    ],
+  },
   {
     company: "Capgemini",
     location: "Valencia, España",
@@ -33,17 +45,7 @@ export const workExperience = [
     ],
   },
 
-  {
-    company: "QUENTIN INFORMATICA SL",
-    location: "Valencia, España",
-    position: "Asistente Técnico",
-    period: "Abril 2022 - Julio 2022",
-    achievements: [
-      "Resolución de incidencias técnicas en un ERP especializado en clínicas dentales y veterinarias.",
-      "Atención directa a clientes para garantizar el correcto funcionamiento del software en su operativa diaria.",
-      "Orientación a usuarios en el uso de la aplicación para optimizar procesos de gestión.",
-    ],
-  },
+  
 ];
 
 export const education = [
