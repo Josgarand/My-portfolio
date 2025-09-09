@@ -18,7 +18,7 @@ export default function GlassHeader() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          ✨ {personalInfo.name}
+          {personalInfo.name}
         </motion.a>
 
         {/* Desktop Navigation */}
@@ -65,6 +65,9 @@ export default function GlassHeader() {
         {isMenuOpen && (
           <motion.div
             className="md:hidden py-4 px-4 border-t border-border/10 backdrop-blur-md backdrop-filter bg-background/80 dark:bg-background/40"
+
+            
+
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -77,17 +80,31 @@ export default function GlassHeader() {
                     key={item}
                     href={`#${item}`}
                     className="transition-colors hover:text-foreground/80 text-foreground/60 py-2"
-                    onClick={toggleMenu}
+
+                    
+onClick={(e) => {
+  e.preventDefault();
+  toggleMenu();
+
+  // forzar scroll manual
+  const target = document.querySelector(`#${item}`);
+  if (target) {
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 0);
+  }
+}}
+
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.2, delay: index * 0.1 }}
                   >
                     {item === "experiencia" && "💼 "}
-                    {item === "habilidades" && "🛠️ "}
-                    {item === "proyectos" && "🚀 "}
-                  
-                    {item === "educación" && "🎓 "}
-                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                {item === "habilidades" && "🛠️ "}
+                {item === "proyectos" && "🚀 "}
+                
+                {item === "educación" && "🎓 "}
+                {item.charAt(0).toUpperCase() + item.slice(1)}
                   </motion.a>
                 )
               )}
